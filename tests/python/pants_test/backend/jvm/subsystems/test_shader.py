@@ -22,7 +22,7 @@ class ShaderTest(unittest.TestCase):
     self.jarjar = '/not/really/jarjar.jar'
     init_subsystem(DistributionLocator)
     executor = SubprocessExecutor(DistributionLocator.cached())
-    self.shader = Shader(jarjar_classpath=[self.jarjar], executor=executor)
+    self.shader = Shader(jarjar_classpath=[self.jarjar], executor=executor, ['javax'])
     self.output_jar = '/not/really/shaded.jar'
 
   def populate_input_jar(self, *entries):
